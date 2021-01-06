@@ -9,4 +9,3 @@ parameters:
           - signalilo/component/main.jsonnet
         input_type: jsonnet
         output_path: signalilo/
-
