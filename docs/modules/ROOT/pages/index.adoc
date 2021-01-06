@@ -1,0 +1,5 @@
+= signalilo
+
+signalilo is a Commodore component to manage signalilo.
+
+See the xref:references/parameters.adoc[parameters] reference for further details.
