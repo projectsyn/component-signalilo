@@ -117,5 +117,5 @@ local service = kube.Service('signalilo') {
 };
 
 {
-  '10_signalilo': [secret, deployment, service],
+  '10_signalilo': [ secret, deployment, service ],
 }
