@@ -2,21 +2,6 @@ parameters:
   signalilo:
     namespace: syn-signalilo
     alertmanager_token: '?{vaultkv:${customer:name}/${cluster:name}/signalilo/alertmanager_token}'
-    alertmanager_receiver:
-      name: signalilo
-      webhook_configs:
-        - send_resolved: true
-          http_config:
-            bearer_token: "${signalilo:alertmanager_token}"
-          url: http://signalilo/webhook
-    alertmanager_routes:
-      # Configure Signalilo heartbeat alert routing
-      - receiver: ${signalilo:alertmanager_receiver:name}
-        match_re:
-          heartbeat: ".+"
-        group_wait: "0s"
-        group_interval: "1s"
-        repeat_interval: "60s"
     icinga:
       url: https://icinga.example.com:5665
       # better defaults?
@@ -29,18 +14,3 @@ parameters:
       signalilo:
         image: quay.io/vshn/signalilo
         tag: v0.8.0
-
-  # This section cannot live in global/kubernetes.yml
-  # But we don't really want to have to repeat it whenever we include
-  # Signalilo... so what do we do?
-  # Having it here is a pretty elegant solution, but we may not want to use
-  # "synsights" in the opensourced code at all
-  synsights:
-    alertmanager:
-      config:
-        receivers:
-          - ${signalilo:alertmanager_receiver}
-        route:
-          routes: ${signalilo:alertmanager_routes}
-          # Set default receiver to Signalilo
-          receiver: ${signalilo:alertmanager_receiver:name}
