@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Added
 
-- …
+- Initial open-source implementation ([#1])
 
-[Unreleased]: https://github.com/projectsyn/component-signalilo/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/projectsyn/component-signalilo/compare/b8e4e0049c74e103627e948c19696aad02204822...HEAD
+[#1]: https://github.com/projectsyn/component-signalilo/pull/1

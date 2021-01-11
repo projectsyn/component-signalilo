@@ -1,3 +1,15 @@
 parameters:
   signalilo:
     namespace: syn-signalilo
+    alertmanager_token: ?{vaultkv:${customer:name}/${cluster:name}/signalilo/alertmanager_token}
+    icinga:
+      url: https://icinga.example.com:5665
+      user: signalilo_icingauser
+      hostname: signalilo_servicehost
+      password: ?{vaultkv:${customer:name}/${cluster:name}/signalilo/icinga_password}
+      static_service_vars: {}
+      ca: ~
+    images:
+      signalilo:
+        image: quay.io/vshn/signalilo
+        tag: v0.8.0

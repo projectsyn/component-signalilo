@@ -10,6 +10,64 @@ default:: `syn-signalilo`
 
 The namespace in which to deploy this component.
 
+== `alertmanager_token`
+
+[horizontal]
+type:: string
+default:: `?{vaultkv:${customer:name}/${cluster:name}/signalilo/alertmanager_token}`
+
+== `icinga`
+
+Configuration for the Icinga API to which alerts are forwarded by Signalilo
+
+=== `url`
+
+[horizontal]
+type:: string
+default:: `https://icinga.example.com:5665`
+
+URL of the Icinga API
+
+=== `hostname`
+
+[horizontal]
+type:: string
+default:: `signalilo_servicehost`
+
+Icinga servicehost for this Signalilo instance
+
+=== `user`
+
+[horizontal]
+type:: string
+default:: `signalilo_icingauser`
+
+API user for Icinga
+
+=== `password`
+
+[horizontal]
+type:: string
+default:: `?{vaultkv:${customer:name}/${cluster:name}/signalilo/icinga_password}`
+
+API password for Icinga
+
+=== `static_service_vars`
+
+[horizontal]
+type:: dict
+default:: `{}`
+
+Addititional variables to configure on Icinga service objects created by Signalilo.
+
+=== `ca`
+
+[horizontal]
+type:: string
+default:: `~`
+
+CA certificate for the Icinga API.
+Signalilo is configured to use the system CA store when this config value is null (`~`).
 
 == Example
 
