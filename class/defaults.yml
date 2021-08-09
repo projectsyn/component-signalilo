@@ -1,5 +1,6 @@
 parameters:
   signalilo:
+    =_metadata: {}
     namespace: syn-signalilo
     alertmanager_token: ?{vaultkv:${customer:name}/${cluster:name}/signalilo/alertmanager_token}
     icinga:

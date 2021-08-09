@@ -1,0 +1,7 @@
+:global:
+  componentName: signalilo
+  githubUrl: https://github.com/projectsyn/component-signalilo
+
+docs/antora.yml:
+  name: signalilo
+  title: signalilo
