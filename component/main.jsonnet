@@ -1,3 +1,4 @@
+local com = import 'lib/commodore.libjsonnet';
 local kap = import 'lib/kapitan.libjsonnet';
 local kube = import 'lib/kube.libjsonnet';
 local inv = kap.inventory();
@@ -50,7 +51,7 @@ local deployment = kube.Deployment('signalilo') {
         containers_+: {
           signalilo: kube.Container('signalilo') {
             image: params.images.signalilo.image + ':' + params.images.signalilo.tag,
-            env_+: std.prune({
+            env_+: std.prune(com.proxyVars {
               SIGNALILO_UUID: inv.parameters.cluster.name,
               SIGNALILO_ICINGA_HOSTNAME: if params.icinga.hostname == null
               then
