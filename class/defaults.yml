@@ -13,4 +13,4 @@ parameters:
     images:
       signalilo:
         image: quay.io/vshn/signalilo
-        tag: v0.8.0
+        tag: v0.9.0
