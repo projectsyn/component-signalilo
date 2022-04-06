@@ -14,7 +14,7 @@ The namespace in which to deploy this component.
 
 [horizontal]
 type:: string
-default:: `?{vaultkv:${customer:name}/${cluster:name}/signalilo/alertmanager_token}`
+default:: `?{vaultkv:${cluster:tenant}/${cluster:name}/signalilo/alertmanager_token}`
 
 == `icinga`
 
@@ -48,7 +48,7 @@ API user for Icinga
 
 [horizontal]
 type:: string
-default:: `?{vaultkv:${customer:name}/${cluster:name}/signalilo/icinga_password}`
+default:: `?{vaultkv:${cluster:tenant}/${cluster:name}/signalilo/icinga_password}`
 
 API password for Icinga
 
