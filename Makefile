@@ -6,6 +6,7 @@ SHELL := bash
 .SUFFIXES:
 
 include Makefile.vars.mk
+include Makefile.additional.mk
 
 .PHONY: help
 help: ## Show this help

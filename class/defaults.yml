@@ -3,6 +3,7 @@ parameters:
     =_metadata: {}
     namespace: syn-signalilo
     alertmanager_token: ?{vaultkv:${cluster:tenant}/${cluster:name}/signalilo/alertmanager_token}
+    uuid: ~
     icinga:
       url: https://icinga.example.com:5665
       user: signalilo_icingauser

@@ -16,6 +16,14 @@ The namespace in which to deploy this component.
 type:: string
 default:: `?{vaultkv:${cluster:tenant}/${cluster:name}/signalilo/alertmanager_token}`
 
+== `uuid`
+
+[horizontal]
+type:: string
+default:: inv.parameters.cluster.name
+
+UUID which identifies the Signalilo instance.
+
 == `icinga`
 
 Configuration for the Icinga API to which alerts are forwarded by Signalilo

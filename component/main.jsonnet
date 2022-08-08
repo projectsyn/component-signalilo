@@ -52,7 +52,11 @@ local deployment = kube.Deployment('signalilo') {
           signalilo: kube.Container('signalilo') {
             image: params.images.signalilo.image + ':' + params.images.signalilo.tag,
             env_+: std.prune(com.proxyVars {
-              SIGNALILO_UUID: inv.parameters.cluster.name,
+              SIGNALILO_UUID: if params.uuid == null
+              then
+                inv.parameters.cluster.name
+              else
+                params.uuid,
               SIGNALILO_ICINGA_HOSTNAME: if params.icinga.hostname == null
               then
                 error 'parameters.signalilo.icinga.hostname is required'

@@ -1,0 +1,7 @@
+# Overwrite parameters here
+
+# parameters: {...}
+
+parameters:
+  signalilo:
+    uuid: test-1234
