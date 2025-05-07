@@ -1,6 +1,8 @@
 parameters:
   signalilo:
-    =_metadata: {}
+    =_metadata:
+      deprecated: true
+      deprecation_notice: The projectsyn/component-signalilo Commodore component isn't actively supported anymore. If you're using this component, consider forking it.
     namespace: syn-signalilo
     alertmanager_token: ?{vaultkv:${cluster:tenant}/${cluster:name}/signalilo/alertmanager_token}
     icinga:

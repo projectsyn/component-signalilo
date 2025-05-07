@@ -1,3 +1,7 @@
+# ⚠️  Repo Archive Notice
+
+As of May 07, 2025, this component will no longer be updated.
+
 # Commodore Component: signalilo
 
 This is a [Commodore][commodore] Component for signalilo.
